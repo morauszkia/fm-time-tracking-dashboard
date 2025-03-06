@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Design files
+*.sketch
+*.fig
+*.xd
+
+.DS_Store
+.prettierignore
