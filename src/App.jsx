@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 
 import Header from "./components/Header";
+import ActivityList from "./components/ActivityList";
 
 function App() {
   const [activeTimeframe, setActiveTimeFrame] = useState("Daily");
@@ -13,6 +14,7 @@ function App() {
   return (
     <>
       <Header activeTimeframe={activeTimeframe} handleChoice={handleChoice} />
+      <ActivityList timeframe={activeTimeframe} />
     </>
   );
 }
