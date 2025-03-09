@@ -1,10 +1,18 @@
+import { useState } from "react";
 import "./App.css";
+
 import Header from "./components/Header";
 
 function App() {
+  const [activeTimeframe, setActiveTimeFrame] = useState("Daily");
+
+  const handleChoice = (choice) => {
+    setActiveTimeFrame(choice);
+  };
+
   return (
     <>
-      <Header />
+      <Header activeTimeframe={activeTimeframe} handleChoice={handleChoice} />
     </>
   );
 }

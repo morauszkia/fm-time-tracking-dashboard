@@ -1,16 +1,9 @@
-import { useState } from "react";
 import { getImageURL } from "../util/image-util";
 import TimeframeOption from "./TimeframeOption";
 
 const timeframes = ["Daily", "Weekly", "Monthly"];
 
-const Header = () => {
-  const [activeTimeframe, setActiveTimeFrame] = useState("Daily");
-
-  const handleChoice = (choice) => {
-    setActiveTimeFrame(choice);
-  };
-
+const Header = ({ activeTimeframe, handleChoice }) => {
   return (
     <header className="rounded-[15px] overflow-hidden bg-(--dark-blue)">
       <section className="bg-(--primary) w-full p-8 flex gap-5 items-center rounded-[15px]">
