@@ -1,6 +1,16 @@
+import { useState } from "react";
 import { getImageURL } from "../util/image-util";
+import TimeframeOption from "./TimeframeOption";
+
+const timeframes = ["Daily", "Weekly", "Monthly"];
 
 const Header = () => {
+  const [activeTimeframe, setActiveTimeFrame] = useState("Daily");
+
+  const handleChoice = (choice) => {
+    setActiveTimeFrame(choice);
+  };
+
   return (
     <header className="rounded-[15px] overflow-hidden bg-(--dark-blue)">
       <section className="bg-(--primary) w-full p-8 flex gap-5 items-center rounded-[15px]">
@@ -17,33 +27,14 @@ const Header = () => {
         </h1>
       </section>
       <section className="flex w-full justify-between text-(--desaturated-blue) text-[1.125rem] py-6">
-        <div className="w-full text-center">
-          <label htmlFor="daily">Daily</label>
-          <input
-            type="radio"
-            name="period"
-            id="daily"
-            className="appearance-none"
+        {timeframes.map((timeframe) => (
+          <TimeframeOption
+            key={timeframe}
+            timeframe={timeframe}
+            active={activeTimeframe == timeframe}
+            onClick={handleChoice.bind(null, timeframe)}
           />
-        </div>
-        <div className="w-full text-center">
-          <label htmlFor="weekly">Weekly</label>
-          <input
-            type="radio"
-            name="period"
-            id="weekly"
-            className="appearance-none"
-          />
-        </div>
-        <div className="w-full text-center">
-          <label htmlFor="monthly">Monthly</label>
-          <input
-            type="radio"
-            name="period"
-            id="monthly"
-            className="appearance-none"
-          />
-        </div>
+        ))}
       </section>
     </header>
   );
