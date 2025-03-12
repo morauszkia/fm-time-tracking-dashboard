@@ -1,4 +1,4 @@
-import { getImageURL } from "../util/image-util";
+import { getImageURL } from "../util/util";
 import TimeframeOption from "./TimeframeOption";
 
 const timeframes = ["Daily", "Weekly", "Monthly"];
