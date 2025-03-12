@@ -5,7 +5,7 @@ import Header from "./components/Header";
 import ActivityList from "./components/ActivityList";
 
 function App() {
-  const [activeTimeframe, setActiveTimeFrame] = useState("Daily");
+  const [activeTimeframe, setActiveTimeFrame] = useState("Weekly");
 
   const handleChoice = (choice) => {
     setActiveTimeFrame(choice);

@@ -1,13 +1,15 @@
 import timeData from "../data/data.json";
+import ActivityCard from "./ActivityCard";
 
 const ActivityList = ({ timeframe }) => {
   return (
-    <ul>
+    <ul className="grid gap-6 md:grid-cols-2 md:gap-[1.875rem] lg:grid-cols-3">
       {timeData.map((activity) => (
-        <li className="text-white">
-          {activity.title}:{" "}
-          {activity.timeframes[timeframe.toLowerCase()].current}
-        </li>
+        <ActivityCard
+          key={activity.title}
+          activity={activity}
+          timeframe={timeframe}
+        />
       ))}
     </ul>
   );
