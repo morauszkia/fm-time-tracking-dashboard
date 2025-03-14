@@ -21,16 +21,16 @@ const ActivityCard = ({ activity, timeframe }) => {
       className="rounded-[15px] w-full relative overflow-hidden lg:min-w-[16rem]"
       style={{ background: gradient }}
     >
-      <section>
+      <header>
         <img
           src={getImageURL(`icon-${toKebabCase(activity.title)}.svg`)}
           alt={`${activity.title} icon`}
           className="absolute right-2 -translate-y-[10%] z-0"
         />
-      </section>
+      </header>
       <section className="relative bg-(--dark-blue) mt-[2.375rem] rounded-[15px] text-white p-6 z-10 xl:mt-11 xl:p-6">
         <div className="flex justify-between items-center xl:mb-6">
-          <span className="font-medium">{activity.title}</span>
+          <h2 className="font-medium inline-block">{activity.title}</h2>
           <img
             src={getImageURL("icon-ellipsis.svg")}
             alt=""
