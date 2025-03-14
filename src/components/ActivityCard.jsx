@@ -12,12 +12,14 @@ const ActivityCard = ({ activity, timeframe }) => {
     `--${toKebabCase(activity.title)}`
   );
 
+  const gradient = `linear-gradient(to bottom, ${bgColor}, ${bgColor} 75%, var(--dark-blue))`;
+
   const { current, previous } = activity.timeframes[timeframe.toLowerCase()];
 
   return (
     <li
-      className="rounded-[15px] w-full relative overflow-hidden"
-      style={{ backgroundColor: bgColor }}
+      className="rounded-[15px] w-full relative overflow-hidden lg:min-w-[16rem]"
+      style={{ background: gradient }}
     >
       <section>
         <img
@@ -26,8 +28,8 @@ const ActivityCard = ({ activity, timeframe }) => {
           className="absolute right-2 -translate-y-[10%] z-0"
         />
       </section>
-      <section className="relative bg-(--dark-blue) mt-[2.375rem] rounded-[15px] text-white p-6 z-10">
-        <div className="flex justify-between items-center">
+      <section className="relative bg-(--dark-blue) mt-[2.375rem] rounded-[15px] text-white p-6 z-10 xl:mt-11 xl:p-6">
+        <div className="flex justify-between items-center xl:mb-6">
           <span className="font-medium">{activity.title}</span>
           <img
             src={getImageURL("icon-ellipsis.svg")}
@@ -35,9 +37,11 @@ const ActivityCard = ({ activity, timeframe }) => {
             className="cursor-pointer hover:brightness-200"
           />
         </div>
-        <div className="flex justify-between items-center">
-          <span className="text-[2rem] font-light">{current}hrs</span>
-          <span className="text-[0.9375rem] text-(--pale-blue)">
+        <div className="flex justify-between items-center xl:flex-col xl:items-start gap-2">
+          <span className="text-[2rem] font-light xl:text-[3.5rem]">
+            {current}hrs
+          </span>
+          <span className="text-[0.9375rem] text-(--pale-blue) text-nowrap">
             {previousPeriod} &ndash; {previous}hrs
           </span>
         </div>

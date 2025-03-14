@@ -5,7 +5,7 @@ const timeframes = ["Daily", "Weekly", "Monthly"];
 
 const Header = ({ activeTimeframe, handleChoice }) => {
   return (
-    <header className="rounded-[15px] overflow-hidden bg-(--dark-blue) max-w-[16rem]">
+    <header className="rounded-[15px] overflow-hidden bg-(--dark-blue) lg:max-w-[16rem]">
       <section className="bg-(--primary) w-full p-8 flex gap-5 items-center rounded-[15px] lg:flex-col lg:items-start lg:pb-[5rem]">
         <img
           src={getImageURL("image-jeremy.png")}
