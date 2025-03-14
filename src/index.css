@@ -21,7 +21,8 @@
 :root {
   --primary: hsl(246, 80%, 60%);
   --very-dark-blue: hsl(226, 43%, 10%);
-  --dark-blue: hsl(235, 46%, 20%);
+  --dark-blue: hsl(236, 45%, 20%);
+  --hover-blue: hsl(236, 41%, 34%);
   --desaturated-blue: hsl(235, 45%, 61%);
   --pale-blue: hsl(236, 100%, 87%);
   --work: hsl(15, 100%, 70%);
