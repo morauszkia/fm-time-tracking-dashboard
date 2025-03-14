@@ -28,7 +28,7 @@ const ActivityCard = ({ activity, timeframe }) => {
           className="absolute right-2 -translate-y-[10%] z-0"
         />
       </header>
-      <section className="relative bg-(--dark-blue) mt-[2.375rem] rounded-[15px] text-white p-6 z-10 xl:mt-11 xl:p-6">
+      <section className="relative bg-(--dark-blue) hover:brightness-150 cursor-pointer mt-[2.375rem] rounded-[15px] text-white p-6 z-10 xl:mt-11 xl:p-6">
         <div className="flex justify-between items-center xl:mb-6">
           <h2 className="font-medium inline-block">{activity.title}</h2>
           <img
