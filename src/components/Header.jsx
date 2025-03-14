@@ -5,8 +5,8 @@ const timeframes = ["Daily", "Weekly", "Monthly"];
 
 const Header = ({ activeTimeframe, handleChoice }) => {
   return (
-    <header className="rounded-[15px] overflow-hidden bg-(--dark-blue)">
-      <section className="bg-(--primary) w-full p-8 flex gap-5 items-center rounded-[15px]">
+    <header className="rounded-[15px] overflow-hidden bg-(--dark-blue) max-w-[16rem]">
+      <section className="bg-(--primary) w-full p-8 flex gap-5 items-center rounded-[15px] lg:flex-col lg:items-start lg:pb-[5rem]">
         <img
           src={getImageURL("image-jeremy.png")}
           alt="Jeremy Robson"
@@ -16,10 +16,12 @@ const Header = ({ activeTimeframe, handleChoice }) => {
           <span className="text-(--pale-blue) text-(length:--normal)">
             Report for
           </span>
-          <span className="text-white text-2xl font-light">Jeremy Robson</span>
+          <span className="text-white text-2xl font-light lg:text-[2.5rem]">
+            Jeremy Robson
+          </span>
         </h1>
       </section>
-      <section className="flex w-full justify-between text-(--desaturated-blue) text-[1.125rem] py-6">
+      <section className="flex w-full justify-between text-(--desaturated-blue) text-[1.125rem] py-6 lg:flex-col lg:items-start lg:justify-between lg:p-8 lg:gap-5">
         {timeframes.map((timeframe) => (
           <TimeframeOption
             key={timeframe}
